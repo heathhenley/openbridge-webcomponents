@@ -26,6 +26,7 @@ jobs:
           node-version: 18
           cache: 'yarn'
           registry-url: 'https://npm.pkg.github.com'
+          always-auth: true
       - name: Build openbridge-webcomponents
         run: cd packages/openbridge-webcomponents && yarn && yarn run build
       - name: publish
