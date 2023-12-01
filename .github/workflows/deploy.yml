@@ -29,6 +29,6 @@ jobs:
       - name: Build openbridge-webcomponents
         run: cd packages/openbridge-webcomponents && yarn && yarn run build
       - name: publish
-        run: cd packages/openbridge-webcomponents && yarn npm publish
+        run: yarn workspace @tibnor/openbridge-webcomponents npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
