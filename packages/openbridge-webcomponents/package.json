@@ -54,5 +54,8 @@
       "import": "./dist/openbridge-webcomponents.js",
       "require": "./dist/openbridge-webcomponents.umd.cjs"
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
