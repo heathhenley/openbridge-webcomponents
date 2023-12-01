@@ -2,7 +2,10 @@
   "name": "@tibnor/openbridge-webcomponents",
   "version": "0.0.1",
   "type": "module",
-  "repository": "https://github.com/tibnor/openbridge-webcomponents.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tibnor/openbridge-webcomponents.git",
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
