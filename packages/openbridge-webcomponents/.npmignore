@@ -7,14 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+.storybook
+__snapshots__
 storybook-static
 node_modules
-dist
 dist-ssr
 *.local
 
 # Editor directories and files
-!.vscode/extensions.json
+.vscode
 .idea
 .DS_Store
 *.suo
@@ -27,5 +28,4 @@ dist-ssr
 *.env
 .cache*
 junit.xml
-__snapshots__/__diff_output__
-package.tgz
+__snapshots__

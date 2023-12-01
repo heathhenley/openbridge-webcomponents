@@ -1,0 +1,33 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy
+
+on:
+  # Runs on pushes to any branch
+  push:
+    branches: ['main', "feat/release"]
+  
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # Single deploy job since we're just deploying
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+      - name: Build openbridge-webcomponents
+        run: cd packages/openbridge-webcomponents && yarn && yarn run build
+      - name: publish
+        run: cd packages/openbridge-webcomponents && yarn run publish
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
