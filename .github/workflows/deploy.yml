@@ -27,6 +27,7 @@ jobs:
           cache: 'yarn'
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
+          scope: '@tibnor'
       - name: Build openbridge-webcomponents
         run: cd packages/openbridge-webcomponents && yarn && yarn run build
       - name: publish
