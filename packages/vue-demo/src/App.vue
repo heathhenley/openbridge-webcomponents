@@ -3,6 +3,7 @@
 import "openbridge-webcomponents";
 import { ref, onMounted, computed } from "vue";
 import { type Configuration, ConfigurationZod, type Page, type PalettUrl, type App } from "@/business/model";
+import { MyComponent } from "../../stencil-vue-lib/dist";
 
 interface MenuItem {
     id: string;
@@ -133,6 +134,7 @@ const contentIframeUrl = computed(() => {
                 </ob-navigation-menu>
                 <ob-brilliance-menu @brilliance-changed="onBrilianceChange" class="brilliance" v-if="showBrilliance"></ob-brilliance-menu>
                 <ob-app-menu class="app-menu" :items.prop="apps" :selectedItemId.prop="selectedAppIdx.toString()"  @app-selected="onAppSelected" v-if="showAppMenu" ref="appMenu"></ob-app-menu>
+                <MyComponent first="Torstein" :middle="10" last="Bø"></MyComponent>
             </div>
           </main>
 </template>
