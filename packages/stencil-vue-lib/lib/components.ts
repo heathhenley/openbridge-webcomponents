@@ -11,6 +11,13 @@ import type { JSX } from 'openbridge-webcomponents-stencil';
 export const MyComponent = /*@__PURE__*/ defineContainer<JSX.MyComponent>('my-component', undefined, [
   'first',
   'middle',
-  'last'
+  'last',
+  'myEvent'
+]);
+
+
+export const ObcIcon = /*@__PURE__*/ defineContainer<JSX.ObcIcon>('obc-icon', undefined, [
+  'icon',
+  'sizePx'
 ]);
 

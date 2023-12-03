@@ -14,6 +14,13 @@
 | `middle` | `middle`  | The middle name | `string` | `undefined` |
 
 
+## Events
+
+| Event     | Description            | Type                           |
+| --------- | ---------------------- | ------------------------------ |
+| `myEvent` | The event when clicked | `CustomEvent<{ id: number; }>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

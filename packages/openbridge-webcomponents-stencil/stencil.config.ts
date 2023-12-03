@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { vueOutputTarget } from '@stencil/vue-output-target';
+import { inlineSvg } from 'stencil-inline-svg';
 
 export const config: Config = {
   namespace: 'openbridge-webcomponents-stencil',
@@ -22,6 +23,9 @@ export const config: Config = {
       componentCorePackage: 'openbridge-webcomponents-stencil',
       proxiesFile: '../stencil-vue-lib/lib/components.ts',
     }),
+  ],
+  plugins: [
+    inlineSvg(),
   ],
   testing: {
     browserHeadless: "new",

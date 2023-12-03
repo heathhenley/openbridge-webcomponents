@@ -13366,6 +13366,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-cli: "npm:^29.7.0"
     puppeteer: "npm:21.1.1"
+    stencil-inline-svg: "npm:^1.1.0"
   languageName: unknown
   linkType: soft
 
@@ -15603,6 +15604,13 @@ __metadata:
   version: 3.4.3
   resolution: "std-env@npm:3.4.3"
   checksum: 61c0d673eb157bbd9ff65da42ae768ff154b948737030fddfbd3f289ab4c0455285d365b1ed03319e05df58eed26622aaa009a03ee1f9159ec71087646834a9a
+  languageName: node
+  linkType: hard
+
+"stencil-inline-svg@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "stencil-inline-svg@npm:1.1.0"
+  checksum: bc51538fdaf45d41994078deb975cdbba9454a0fadc5b655631f3bcae4458f6f2c4f5b9cb165108794b91b145f4810373884dde98fba4154c01b05ab863af4c2
   languageName: node
   linkType: hard
 
