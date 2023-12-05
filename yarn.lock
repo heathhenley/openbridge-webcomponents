@@ -5875,6 +5875,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tibnor/openbridge-webcomponents-stencil@workspace:^, @tibnor/openbridge-webcomponents-stencil@workspace:packages/openbridge-webcomponents-stencil":
+  version: 0.0.0-use.local
+  resolution: "@tibnor/openbridge-webcomponents-stencil@workspace:packages/openbridge-webcomponents-stencil"
+  dependencies:
+    "@stencil-community/postcss": "npm:^2.2.0"
+    "@stencil/core": "npm:^4.7.0"
+    "@stencil/vue-output-target": "npm:^0.8.7"
+    "@storybook/addon-essentials": "npm:^7.6.3"
+    "@storybook/addon-interactions": "npm:^7.6.3"
+    "@storybook/addon-links": "npm:^7.6.3"
+    "@storybook/blocks": "npm:^7.6.3"
+    "@storybook/html": "npm:^7.6.3"
+    "@storybook/html-vite": "npm:^7.6.3"
+    "@storybook/test": "npm:^7.6.3"
+    "@types/jest": "npm:^29.5.6"
+    "@types/node": "npm:^16.18.11"
+    "@types/postcss-mixins": "npm:^9"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    jest: "npm:^29.7.0"
+    jest-cli: "npm:^29.7.0"
+    postcss-mixins: "npm:^9.0.4"
+    puppeteer: "npm:21.1.1"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    stencil-inline-svg: "npm:^1.1.0"
+    storybook: "npm:^7.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@tibnor/stencil-vue-lib@workspace:^, @tibnor/stencil-vue-lib@workspace:packages/stencil-vue-lib":
+  version: 0.0.0-use.local
+  resolution: "@tibnor/stencil-vue-lib@workspace:packages/stencil-vue-lib"
+  dependencies:
+    "@tibnor/openbridge-webcomponents-stencil": "workspace:^"
+    vue: "npm:3"
+  languageName: unknown
+  linkType: soft
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -14526,36 +14565,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openbridge-webcomponents-stencil@npm:*, openbridge-webcomponents-stencil@workspace:packages/openbridge-webcomponents-stencil":
-  version: 0.0.0-use.local
-  resolution: "openbridge-webcomponents-stencil@workspace:packages/openbridge-webcomponents-stencil"
-  dependencies:
-    "@stencil-community/postcss": "npm:^2.2.0"
-    "@stencil/core": "npm:^4.7.0"
-    "@stencil/vue-output-target": "npm:^0.8.7"
-    "@storybook/addon-essentials": "npm:^7.6.3"
-    "@storybook/addon-interactions": "npm:^7.6.3"
-    "@storybook/addon-links": "npm:^7.6.3"
-    "@storybook/blocks": "npm:^7.6.3"
-    "@storybook/html": "npm:^7.6.3"
-    "@storybook/html-vite": "npm:^7.6.3"
-    "@storybook/test": "npm:^7.6.3"
-    "@types/jest": "npm:^29.5.6"
-    "@types/node": "npm:^16.18.11"
-    "@types/postcss-mixins": "npm:^9"
-    "@types/react": "npm:^18"
-    "@types/react-dom": "npm:^18"
-    jest: "npm:^29.7.0"
-    jest-cli: "npm:^29.7.0"
-    postcss-mixins: "npm:^9.0.4"
-    puppeteer: "npm:21.1.1"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    stencil-inline-svg: "npm:^1.1.0"
-    storybook: "npm:^7.6.3"
-  languageName: unknown
-  linkType: soft
-
 "openbridge-webcomponents@workspace:^, openbridge-webcomponents@workspace:packages/openbridge-webcomponents":
   version: 0.0.0-use.local
   resolution: "openbridge-webcomponents@workspace:packages/openbridge-webcomponents"
@@ -16851,15 +16860,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stencil-vue-lib@workspace:^, stencil-vue-lib@workspace:packages/stencil-vue-lib":
-  version: 0.0.0-use.local
-  resolution: "stencil-vue-lib@workspace:packages/stencil-vue-lib"
-  dependencies:
-    openbridge-webcomponents-stencil: "npm:*"
-    vue: "npm:3"
-  languageName: unknown
-  linkType: soft
-
 "stop-iteration-iterator@npm:^1.0.0":
   version: 1.0.0
   resolution: "stop-iteration-iterator@npm:1.0.0"
@@ -18236,6 +18236,7 @@ __metadata:
   dependencies:
     "@playwright/test": "npm:^1.39.0"
     "@rushstack/eslint-patch": "npm:^1.3.3"
+    "@tibnor/stencil-vue-lib": "workspace:^"
     "@tsconfig/node18": "npm:^18.2.2"
     "@types/jsdom": "npm:^21.1.3"
     "@types/node": "npm:^18.18.5"
@@ -18251,7 +18252,6 @@ __metadata:
     openbridge-webcomponents: "workspace:^"
     pinia: "npm:^2.1.7"
     prettier: "npm:^3.0.3"
-    stencil-vue-lib: "workspace:^"
     typescript: "npm:~5.2.0"
     vite: "npm:^4.4.11"
     vitest: "npm:^0.34.6"

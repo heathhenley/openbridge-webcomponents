@@ -20,7 +20,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "openbridge-webcomponents-stencil": "*"
+    "@tibnor/openbridge-webcomponents-stencil": "workspace:^"
   },
   "packageManager": "yarn@4.0.1",
   "devDependencies": {
