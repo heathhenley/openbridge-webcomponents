@@ -1,4 +1,4 @@
-import { applyPolyfills, defineCustomElements } from 'openbridge-webcomponents-stencil/loader';
+import { applyPolyfills, defineCustomElements } from '@tibnor/openbridge-webcomponents-stencil/loader';
 export const ComponentLibrary = {
     async install() {
         applyPolyfills().then(() => {

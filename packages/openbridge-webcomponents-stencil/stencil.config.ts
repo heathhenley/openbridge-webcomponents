@@ -24,7 +24,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
     vueOutputTarget({
-      componentCorePackage: 'openbridge-webcomponents-stencil',
+      componentCorePackage: '@tibnor/openbridge-webcomponents-stencil',
       proxiesFile: '../stencil-vue-lib/lib/components.ts',
     }),
   ],

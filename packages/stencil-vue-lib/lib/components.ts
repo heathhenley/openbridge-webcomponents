@@ -3,7 +3,7 @@
 /* auto-generated vue proxies */
 import { defineContainer } from './vue-component-lib/utils';
 
-import type { JSX } from 'openbridge-webcomponents-stencil';
+import type { JSX } from '@tibnor/openbridge-webcomponents-stencil';
 
 
 

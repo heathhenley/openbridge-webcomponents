@@ -5896,6 +5896,7 @@ __metadata:
     "@types/react-dom": "npm:^18"
     jest: "npm:^29.7.0"
     jest-cli: "npm:^29.7.0"
+    postcss: "npm:^8.4.32"
     postcss-mixins: "npm:^9.0.4"
     puppeteer: "npm:21.1.1"
     react: "npm:^18.2.0"
@@ -15349,7 +15350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:~8.4.27":
+"postcss@npm:^8.2.14, postcss@npm:^8.4.32, postcss@npm:~8.4.27":
   version: 8.4.32
   resolution: "postcss@npm:8.4.32"
   dependencies:
