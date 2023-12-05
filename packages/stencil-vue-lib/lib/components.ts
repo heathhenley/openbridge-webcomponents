@@ -21,3 +21,11 @@ export const ObcIcon = /*@__PURE__*/ defineContainer<JSX.ObcIcon>('obc-icon', un
   'sizePx'
 ]);
 
+
+export const ObcTooltip = /*@__PURE__*/ defineContainer<JSX.ObcTooltip>('obc-tooltip', undefined, [
+  'label',
+  'text',
+  'position',
+  'open'
+]);
+

@@ -1,0 +1,126 @@
+:host {
+    display: block;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.outer-wrapper {
+    position: relative;
+    width: max-content;
+}
+
+.open {
+    --obc-tooltip-open: 1;
+}
+
+.wrapper {
+    position: absolute;
+    display: flex;
+    visibility: var(--obc-tooltip-open, hidden);
+    width: max-content;
+    max-width: 288px;
+    border-radius: 2px;
+    border: 1px solid var(--normal-enabled-border-color);
+    background: var(--container-background-color);
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.30);
+    isolation: isolate;
+
+    --arrow-size: 8px;
+
+    &.large-arrow {
+        --arrow-size: 12px;
+    }
+
+    &.left {
+        top: 50%;
+        right: 100%;
+        transform: translateX(calc(-1*var(--arrow-size))) translateY(-50%);
+    }
+
+    &.right {
+        top: 50%;
+        left: 100%;
+        transform: translateX(calc(1*var(--arrow-size))) translateY(-50%);
+    }
+
+    &.above {
+        left: 50%;
+        bottom: 100%;
+        transform: translateX(-50%) translateY(calc(-1*var(--arrow-size)));
+    }
+
+    &.below {
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%) translateY(var(--arrow-size));
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background: var(--container-background-color);
+    z-index: 2;
+    border-radius: 2px;
+    padding: 4px 16px;
+    color: var(--element-active-color);
+    text-align: left
+}
+
+.title {
+    @mixin font-button;
+    color: var(--element-active-color);
+}
+
+.text {
+    @mixin font-body;
+}
+
+/* Arrows */
+.wrapper::before {
+    content: "";
+    position: absolute;
+    /* actual width should be 10.7px after skew and rotation */
+    width: 10.3px;
+    /* actual height should be 8px after skew and rotation */
+    height: 10.3px;
+    background: var(--container-background-color);
+    border: 1px solid var(--normal-enabled-border-color);
+    margin: auto;
+    transform-origin: center;
+    inset: 0;
+
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.30);
+    z-index: 1;
+}
+
+.large-arrow.wrapper::before {
+    width: 15.5px;
+    height: 15.5px;
+}
+
+.above.wrapper::before {
+    margin-bottom: 0;
+    top: auto;
+    transform: translateY(50%) rotate(-45deg) skew(-15deg, -15deg);
+}
+
+.left.wrapper::before {
+    margin-right: 0;
+    transform: translateX(50%) rotate(45deg) skew(-15deg, -15deg);
+}
+
+.right.wrapper::before {
+    margin-left: 0;
+    transform: translateX(-50%) rotate(-135deg) skew(-15deg, -15deg);
+}
+
+.below.wrapper::before {
+    margin-top: 0;
+    bottom: auto;
+    transform: translateY(-50%) rotate(135deg) skew(-15deg, -15deg);
+}

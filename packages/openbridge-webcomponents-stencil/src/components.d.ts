@@ -30,6 +30,20 @@ export namespace Components {
          */
         "sizePx": number;
     }
+    interface ObcTooltip {
+        "label": string;
+        /**
+          * Open the tooltip
+          * @type {boolean} The tooltip can also be opened by using CSS custom properties: --obc-tooltip-open: 1
+         */
+        "open": boolean;
+        /**
+          * Position of the tooltip arrow
+          * @type {('above' | 'below' | 'left' | 'right')}
+         */
+        "position": 'above' | 'below' | 'left' | 'right';
+        "text": string;
+    }
 }
 export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -59,9 +73,16 @@ declare global {
         prototype: HTMLObcIconElement;
         new (): HTMLObcIconElement;
     };
+    interface HTMLObcTooltipElement extends Components.ObcTooltip, HTMLStencilElement {
+    }
+    var HTMLObcTooltipElement: {
+        prototype: HTMLObcTooltipElement;
+        new (): HTMLObcTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "obc-icon": HTMLObcIconElement;
+        "obc-tooltip": HTMLObcTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -93,9 +114,24 @@ declare namespace LocalJSX {
          */
         "sizePx"?: number;
     }
+    interface ObcTooltip {
+        "label"?: string;
+        /**
+          * Open the tooltip
+          * @type {boolean} The tooltip can also be opened by using CSS custom properties: --obc-tooltip-open: 1
+         */
+        "open"?: boolean;
+        /**
+          * Position of the tooltip arrow
+          * @type {('above' | 'below' | 'left' | 'right')}
+         */
+        "position"?: 'above' | 'below' | 'left' | 'right';
+        "text"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "obc-icon": ObcIcon;
+        "obc-tooltip": ObcTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -104,6 +140,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "obc-icon": LocalJSX.ObcIcon & JSXBase.HTMLAttributes<HTMLObcIconElement>;
+            "obc-tooltip": LocalJSX.ObcTooltip & JSXBase.HTMLAttributes<HTMLObcTooltipElement>;
         }
     }
 }

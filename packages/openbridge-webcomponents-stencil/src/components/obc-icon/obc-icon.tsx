@@ -25,7 +25,10 @@ export class ObcIcon {
   @Prop() sizePx: number = 24;
 
   render() {
-    const icon = icons[this.icon] || Placeholder;
+    let icon = icons[this.icon];
+    if (!icon) { console.error(`Icon ${this.icon} not found`)
+    icon = icons.placeholder;
+  }
 
     return (
        <div class="wrapper" style={{'--size': this.sizePx + 'px'}} innerHTML={icon}> 
