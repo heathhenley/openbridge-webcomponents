@@ -1,0 +1,42 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy
+
+on:
+  # Runs on pushes to any branch
+  push:
+    branches: ['main', "feat/stencil"]
+  
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # Single deploy job since we're just deploying
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          registry-url: 'https://npm.pkg.github.com'
+          always-auth: true
+          scope: '@tibnor'
+      - name: Build openbridge-webcomponents-stencil
+        run: cd packages/openbridge-webcomponents-stencil && yarn && yarn run build
+      - name: publish
+        run: cd packages/openbridge-webcomponents-stencil && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build stencil-vue-lib
+        run: cd packages/stencil-vue-lib && yarn && yarn run build
+      - name: publish
+        run: cd packages/stencil-vue-lib && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

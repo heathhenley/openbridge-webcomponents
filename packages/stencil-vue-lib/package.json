@@ -1,10 +1,14 @@
 {
-  "name": "stencil-vue-lib",
+  "name": "@tibnor/stencil-vue-lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tibnor/openbridge-webcomponents.git"
+  },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "npm run tsc",
@@ -12,7 +16,8 @@
     "prepack": "yarn run build"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "openbridge-webcomponents-stencil": "*"
