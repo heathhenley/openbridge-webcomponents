@@ -1,7 +1,8 @@
 {
   "name": "@tibnor/openbridge-webcomponents-stencil",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Stencil Component Starter",
+  "customElements": "custom-elements.json",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
@@ -19,6 +20,7 @@
     "loader/"
   ],
   "scripts": {
+    "dev": "concurrently \"yarn build:watch\" \"yarn storybook\" \"yarn generate:cem:watch\"",
     "build": "stencil build --docs",
     "build:watch": "stencil build --watch --docs",
     "prepack": "yarn build",
@@ -27,35 +29,45 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
+    "generate:cem": "custom-elements-manifest analyze --stencil --globs \"src/components/**/*.tsx\" ",
+    "generate:cem:watch": "custom-elements-manifest analyze --stencil --globs \"src/components/**/*.tsx\" --watch ",
+    "download:icons": "tsx ./script/download-icons.ts"
   },
   "dependencies": {
     "@stencil/core": "^4.7.0",
     "postcss": "^8.4.32"
   },
   "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.9.0",
     "@stencil-community/postcss": "^2.2.0",
     "@stencil/vue-output-target": "^0.8.7",
     "@storybook/addon-essentials": "^7.6.3",
     "@storybook/addon-interactions": "^7.6.3",
     "@storybook/addon-links": "^7.6.3",
     "@storybook/blocks": "^7.6.3",
-    "@storybook/html": "^7.6.3",
-    "@storybook/html-vite": "^7.6.3",
     "@storybook/test": "^7.6.3",
+    "@storybook/test-runner": "^0.16.0",
+    "@storybook/web-components": "^7.6.3",
+    "@storybook/web-components-vite": "^7.6.3",
     "@types/jest": "^29.5.6",
     "@types/node": "^16.18.11",
     "@types/postcss-mixins": "^9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
+    "lit": "^3.1.0",
     "postcss-mixins": "^9.0.4",
+    "postcss-nesting": "^12.0.1",
     "puppeteer": "21.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "stencil-inline-svg": "^1.1.0",
-    "storybook": "^7.6.3"
+    "storybook": "^7.6.3",
+    "tsx": "^4.6.2"
   },
   "license": "MIT",
   "publishConfig": {

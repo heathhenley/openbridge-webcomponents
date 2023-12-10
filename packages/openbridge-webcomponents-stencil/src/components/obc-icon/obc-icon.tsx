@@ -1,11 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import Placeholder from '../../assets/icons/01-placeholder.svg';
-import Support from '../../assets/icons/03-support.svg';
-
-const icons = {
-  placeholder: Placeholder,
-  support: Support
-}
+import { ICONS } from '../../icons';
 
 @Component({
   tag: 'obc-icon',
@@ -17,7 +11,7 @@ export class ObcIcon {
   /**
    * The icon name
    */
-  @Prop() icon: string;
+  @Prop() iconId: string;
 
   /**
    * The icon size in pixels
@@ -25,9 +19,9 @@ export class ObcIcon {
   @Prop() sizePx: number = 24;
 
   render() {
-    let icon = icons[this.icon];
-    if (!icon) { console.error(`Icon ${this.icon} not found`)
-    icon = icons.placeholder;
+    let icon = ICONS[this.iconId];
+    if (!icon) { console.error(`Icon ${this.iconId} not found`)
+    icon = ICONS['01-placeholder'];
   }
 
     return (

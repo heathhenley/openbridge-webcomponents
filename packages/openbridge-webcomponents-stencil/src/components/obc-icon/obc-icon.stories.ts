@@ -1,29 +1,36 @@
-
+import { Meta } from '@storybook/web-components';
+import { ObcIcon } from './obc-icon';
+import { ICONS_IDS } from '../../icons';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-export default {
-  title: 'Example/Button',
+const meta: Meta<typeof ObcIcon> = {
+  title: 'Example/Icon',
   tags: ['autodocs'],
-  render: ({ sizePx, icon }) => {
-    // You can either use a function to create DOM elements or use a plain html string!
-    // return `<div>${label}</div>`;
-    return `<obc-icon size-px="${sizePx}" icon="${icon}"></obc-icon>`;
-  },
-  args: {
-    sizePx: 24,
-    icon: 'placeholder',
-  },
+  component: "obc-icon",
   argTypes: {
-    sizePx: { control: 'number' },
-    icon: {
-      control: { type: 'select' },
-      options: ['placeholder', 'support'],
+    // @ts-ignore
+    iconId: {
+      control: {
+        type: 'select',
+
+      },
+      options: ICONS_IDS
     },
+
+  }
+};
+
+export default meta;
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Placeholder = {
+  args: {
+    iconId: '01-placeholder',
   },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
+export const FullscreenIcon = {
   args: {
+    iconId: '05-fullscreen',
   },
 };

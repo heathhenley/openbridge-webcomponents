@@ -8,16 +8,16 @@ import type { JSX } from '@tibnor/openbridge-webcomponents-stencil';
 
 
 
-export const MyComponent = /*@__PURE__*/ defineContainer<JSX.MyComponent>('my-component', undefined, [
-  'first',
-  'middle',
-  'last',
-  'myEvent'
+export const ObcButton = /*@__PURE__*/ defineContainer<JSX.ObcButton>('obc-button', undefined, [
+  'variant',
+  'size',
+  'fullWidth',
+  'leftAlign'
 ]);
 
 
 export const ObcIcon = /*@__PURE__*/ defineContainer<JSX.ObcIcon>('obc-icon', undefined, [
-  'icon',
+  'iconId',
   'sizePx'
 ]);
 

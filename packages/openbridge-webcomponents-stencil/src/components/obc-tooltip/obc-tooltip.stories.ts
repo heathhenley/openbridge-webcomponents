@@ -4,6 +4,7 @@
 export default {
   title: 'Example/Tooltip',
   tags: ['autodocs'],
+  component: "ob-tooltip",
   render: ({ label, text, position, open }) => {
     return `
     <div style='margin: 100px'>
@@ -19,9 +20,6 @@ export default {
     position: 'above',
   },
   argTypes: {
-    open: { control: 'boolean' },
-    label: { control: 'text' },
-    text: { control: 'text' },
     position: {
       control: 'select',
       options: ['above', 'below', 'left', 'right'],

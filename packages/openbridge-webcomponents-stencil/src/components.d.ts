@@ -6,25 +6,20 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    /**
+     * Button component
+     */
+    interface ObcButton {
+        "fullWidth": boolean;
+        "leftAlign": boolean;
+        "size": string;
+        "variant": string;
     }
     interface ObcIcon {
         /**
           * The icon name
          */
-        "icon": string;
+        "iconId": string;
         /**
           * The icon size in pixels
          */
@@ -45,27 +40,15 @@ export namespace Components {
         "text": string;
     }
 }
-export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMyComponentElement;
-}
 declare global {
-    interface HTMLMyComponentElementEventMap {
-        "myEvent": {id: number};
+    /**
+     * Button component
+     */
+    interface HTMLObcButtonElement extends Components.ObcButton, HTMLStencilElement {
     }
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLMyComponentElementEventMap>(type: K, listener: (this: HTMLMyComponentElement, ev: MyComponentCustomEvent<HTMLMyComponentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLMyComponentElementEventMap>(type: K, listener: (this: HTMLMyComponentElement, ev: MyComponentCustomEvent<HTMLMyComponentElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLObcButtonElement: {
+        prototype: HTMLObcButtonElement;
+        new (): HTMLObcButtonElement;
     };
     interface HTMLObcIconElement extends Components.ObcIcon, HTMLStencilElement {
     }
@@ -80,35 +63,26 @@ declare global {
         new (): HTMLObcTooltipElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "obc-button": HTMLObcButtonElement;
         "obc-icon": HTMLObcIconElement;
         "obc-tooltip": HTMLObcTooltipElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-        /**
-          * The event when clicked
-         */
-        "onMyEvent"?: (event: MyComponentCustomEvent<{id: number}>) => void;
+    /**
+     * Button component
+     */
+    interface ObcButton {
+        "fullWidth"?: boolean;
+        "leftAlign"?: boolean;
+        "size"?: string;
+        "variant"?: string;
     }
     interface ObcIcon {
         /**
           * The icon name
          */
-        "icon"?: string;
+        "iconId"?: string;
         /**
           * The icon size in pixels
          */
@@ -129,7 +103,7 @@ declare namespace LocalJSX {
         "text"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "obc-button": ObcButton;
         "obc-icon": ObcIcon;
         "obc-tooltip": ObcTooltip;
     }
@@ -138,7 +112,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            /**
+             * Button component
+             */
+            "obc-button": LocalJSX.ObcButton & JSXBase.HTMLAttributes<HTMLObcButtonElement>;
             "obc-icon": LocalJSX.ObcIcon & JSXBase.HTMLAttributes<HTMLObcIconElement>;
             "obc-tooltip": LocalJSX.ObcTooltip & JSXBase.HTMLAttributes<HTMLObcTooltipElement>;
         }

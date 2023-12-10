@@ -16,6 +16,17 @@
             ],
         },
         {
+            "name": "Generate vue",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/openbridge-webcomponents",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": [
+                "run",
+                "generate:vue"
+            ],
+        },
+        {
             "name": "Generate icons",
             "type": "node",
             "request": "launch",

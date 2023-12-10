@@ -3,6 +3,7 @@ import { vueOutputTarget } from '@stencil/vue-output-target';
 import { inlineSvg } from 'stencil-inline-svg';
 import { postcss } from '@stencil-community/postcss';
 import postCssMixin from "postcss-mixins";
+import postCssNesting from "postcss-nesting";
 import { styleMixin } from "./mixins";
 import path from 'path';
 
@@ -37,9 +38,14 @@ export const config: Config = {
           "mixins": {
             "style": styleMixin
           }
-        })]
+        }),
+        postCssNesting(),
+      ]
     })],
   testing: {
     browserHeadless: "new",
   },
+  extras: {
+    enableImportInjection: true
+  }
 };

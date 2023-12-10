@@ -3,7 +3,8 @@
 import "openbridge-webcomponents";
 import { ref, onMounted, computed } from "vue";
 import { type Configuration, ConfigurationZod, type Page, type PalettUrl, type App } from "@/business/model";
-import { MyComponent, ObcIcon, ObcTooltip } from "../../stencil-vue-lib/dist";
+import { ObcTooltip } from "../../stencil-vue-lib/dist";
+
 
 interface MenuItem {
     id: string;
@@ -110,7 +111,7 @@ function myEventHandler(event: CustomEvent<{id: number}>) {
 <!-- eslint-disable vue/no-deprecated-slot-attribute -->
 <template>
         <header>
-            <ob-top-bar 
+            <ob-top-bar
                 :title="app?.name"
                 :pageName="selectedPage?.name"
                 :date="date"

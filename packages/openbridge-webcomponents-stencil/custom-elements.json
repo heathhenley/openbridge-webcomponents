@@ -1,0 +1,288 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-button/obc-button.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Button component",
+          "name": "ObcButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"normal\""
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"regular\""
+            },
+            {
+              "kind": "field",
+              "name": "fullWidth",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "leftAlign",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "hasLeadingIcon",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasTrailingIcon",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hostElement",
+              "type": {
+                "text": "HTMLStencilElement"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "fieldName": "size"
+            },
+            {
+              "name": "full-width",
+              "fieldName": "fullWidth"
+            },
+            {
+              "name": "left-align",
+              "fieldName": "leftAlign"
+            }
+          ],
+          "tagName": "obc-button",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ObcButton",
+          "declaration": {
+            "name": "ObcButton",
+            "module": "src/components/obc-button/obc-button.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-button",
+          "declaration": {
+            "name": "ObcButton",
+            "module": "src/components/obc-button/obc-button.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-tooltip/obc-tooltip.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ObcTooltip",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "('above' | 'below' | 'left' | 'right')"
+              },
+              "default": "'below'",
+              "description": "Position of the tooltip arrow"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "The tooltip can also be opened by using CSS custom properties: --obc-tooltip-open: 1"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "fieldName": "label",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "text",
+              "fieldName": "text",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "position",
+              "fieldName": "position",
+              "type": {
+                "text": "'above' | 'below' | 'left' | 'right'"
+              }
+            },
+            {
+              "name": "open",
+              "fieldName": "open",
+              "type": {
+                "text": "boolean"
+              }
+            }
+          ],
+          "tagName": "obc-tooltip",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ObcTooltip",
+          "declaration": {
+            "name": "ObcTooltip",
+            "module": "src/components/obc-tooltip/obc-tooltip.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-tooltip",
+          "declaration": {
+            "name": "ObcTooltip",
+            "module": "src/components/obc-tooltip/obc-tooltip.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-icon/obc-icon.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ObcIcon",
+          "members": [
+            {
+              "kind": "field",
+              "name": "iconId",
+              "type": {
+                "text": "string"
+              },
+              "description": "The icon name"
+            },
+            {
+              "kind": "field",
+              "name": "sizePx",
+              "type": {
+                "text": "number"
+              },
+              "default": "24",
+              "description": "The icon size in pixels"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon-id",
+              "fieldName": "iconId",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "size-px",
+              "fieldName": "sizePx",
+              "type": {
+                "text": "number"
+              }
+            }
+          ],
+          "tagName": "obc-icon",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ObcIcon",
+          "declaration": {
+            "name": "ObcIcon",
+            "module": "src/components/obc-icon/obc-icon.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-icon",
+          "declaration": {
+            "name": "ObcIcon",
+            "module": "src/components/obc-icon/obc-icon.tsx"
+          }
+        }
+      ]
+    }
+  ]
+}
