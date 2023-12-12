@@ -4,7 +4,7 @@
 export default {
   title: 'Example/Tooltip',
   tags: ['autodocs'],
-  component: "ob-tooltip",
+  component: "obc-tooltip",
   render: ({ label, text, position, open }) => {
     return `
     <div style='margin: 100px'>

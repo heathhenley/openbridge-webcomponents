@@ -6,7 +6,7 @@ import '../icon/Icon';
 const meta: Meta<typeof NotificationButton> = {
   title: 'Button/Notification button',
   tags: ['autodocs'],
-  component: "ob-notification-button",
+  component: "obc-notification-button",
 } satisfies Meta<NotificationButton>;
 
 export default meta;

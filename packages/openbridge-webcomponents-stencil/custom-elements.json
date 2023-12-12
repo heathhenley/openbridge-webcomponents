@@ -4,6 +4,306 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/components/obc-alert-button/obc-alert-button.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AlertButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "nAlerts",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "type"
+            },
+            {
+              "kind": "field",
+              "name": "standalone",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "counter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "n-alerts",
+              "fieldName": "nAlerts"
+            },
+            {
+              "name": "type",
+              "fieldName": "type"
+            },
+            {
+              "name": "standalone",
+              "fieldName": "standalone"
+            },
+            {
+              "name": "counter",
+              "fieldName": "counter"
+            }
+          ],
+          "tagName": "obc-alert-button",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AlertButton",
+          "declaration": {
+            "name": "AlertButton",
+            "module": "src/components/obc-alert-button/obc-alert-button.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-alert-button",
+          "declaration": {
+            "name": "AlertButton",
+            "module": "src/components/obc-alert-button/obc-alert-button.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-breadcrumb/obc-breadcrumb.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Breadcrumb",
+          "members": [
+            {
+              "kind": "field",
+              "name": "items",
+              "default": "[]"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "items",
+              "fieldName": "items"
+            }
+          ],
+          "tagName": "obc-breadcrumb",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Breadcrumb",
+          "declaration": {
+            "name": "Breadcrumb",
+            "module": "src/components/obc-breadcrumb/obc-breadcrumb.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-breadcrumb",
+          "declaration": {
+            "name": "Breadcrumb",
+            "module": "src/components/obc-breadcrumb/obc-breadcrumb.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-brilliance-menu/obc-brilliance-menu.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BrillianceMenu",
+          "members": [
+            {
+              "kind": "method",
+              "name": "onBrilianceChanged",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CustomEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "tagName": "obc-brilliance-menu",
+          "events": [
+            {
+              "name": "brillianceChanged",
+              "type": {
+                "text": "EventEmitter<{ value: number }>"
+              }
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BrillianceMenu",
+          "declaration": {
+            "name": "BrillianceMenu",
+            "module": "src/components/obc-brilliance-menu/obc-brilliance-menu.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-brilliance-menu",
+          "declaration": {
+            "name": "BrillianceMenu",
+            "module": "src/components/obc-brilliance-menu/obc-brilliance-menu.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-app-menu/obc-app-menu.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AppMenu",
+          "members": [
+            {
+              "kind": "field",
+              "name": "items",
+              "type": {
+                "text": "Array<MenuItem>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "selectedItemId",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "_search",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "method",
+              "name": "onSearchInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "onAppButtonClick",
+              "parameters": [
+                {
+                  "name": "item",
+                  "type": {
+                    "text": "MenuItem"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "items",
+              "fieldName": "items",
+              "type": {
+                "text": "Array<MenuItem>"
+              }
+            },
+            {
+              "name": "selected-item-id",
+              "fieldName": "selectedItemId",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "tagName": "obc-app-menu",
+          "events": [
+            {
+              "name": "appSelected",
+              "type": {
+                "text": "EventEmitter<MenuItem>"
+              }
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AppMenu",
+          "declaration": {
+            "name": "AppMenu",
+            "module": "src/components/obc-app-menu/obc-app-menu.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-app-menu",
+          "declaration": {
+            "name": "AppMenu",
+            "module": "src/components/obc-app-menu/obc-app-menu.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/obc-button/obc-button.tsx",
       "declarations": [
         {
@@ -113,6 +413,1354 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/obc-alert-menu/obc-alert-menu.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AlertMenu",
+          "members": [
+            {
+              "kind": "field",
+              "name": "alerts",
+              "type": {
+                "text": "Array<Alert>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "narrow",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "alerts",
+              "fieldName": "alerts",
+              "type": {
+                "text": "Array<Alert>"
+              }
+            },
+            {
+              "name": "narrow",
+              "fieldName": "narrow",
+              "type": {
+                "text": "boolean"
+              }
+            }
+          ],
+          "tagName": "obc-alert-menu",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AlertMenu",
+          "declaration": {
+            "name": "AlertMenu",
+            "module": "src/components/obc-alert-menu/obc-alert-menu.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-alert-menu",
+          "declaration": {
+            "name": "AlertMenu",
+            "module": "src/components/obc-alert-menu/obc-alert-menu.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-clock/obc-clock.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Clock",
+          "members": [
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"2021-01-01T11:11:11.111Z\""
+            },
+            {
+              "kind": "field",
+              "name": "showDate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "monthNames",
+              "type": {
+                "text": "array"
+              },
+              "default": "[\"Jan\", \"Feb\", \"Mar\", \"Apr\",\n    \"May\", \"Jun\", \"Jul\", \"Aug\",\n    \"Sep\", \"Oct\", \"Nov\", \"Dec\"]"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "date",
+              "fieldName": "date"
+            },
+            {
+              "name": "show-date",
+              "fieldName": "showDate"
+            }
+          ],
+          "tagName": "obc-clock",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Clock",
+          "declaration": {
+            "name": "Clock",
+            "module": "src/components/obc-clock/obc-clock.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-clock",
+          "declaration": {
+            "name": "Clock",
+            "module": "src/components/obc-clock/obc-clock.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-demo/obc-demo.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Demo",
+          "members": [
+            {
+              "kind": "field",
+              "name": "showBrilliance",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "showNavigation",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "menuButtonClicked"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "tagName": "obc-demo",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Demo",
+          "declaration": {
+            "name": "Demo",
+            "module": "src/components/obc-demo/obc-demo.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-demo",
+          "declaration": {
+            "name": "Demo",
+            "module": "src/components/obc-demo/obc-demo.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-app-button/obc-app-button.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AppButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Button'"
+            },
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "default": "'01-placeholder'"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"normal\""
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "fieldName": "label"
+            },
+            {
+              "name": "icon",
+              "fieldName": "icon"
+            },
+            {
+              "name": "checked",
+              "fieldName": "checked"
+            },
+            {
+              "name": "size",
+              "fieldName": "size"
+            }
+          ],
+          "tagName": "obc-app-button",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AppButton",
+          "declaration": {
+            "name": "AppButton",
+            "module": "src/components/obc-app-button/obc-app-button.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-app-button",
+          "declaration": {
+            "name": "AppButton",
+            "module": "src/components/obc-app-button/obc-app-button.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-divider/obc-divider.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Divider",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "tagName": "obc-divider",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Divider",
+          "declaration": {
+            "name": "Divider",
+            "module": "src/components/obc-divider/obc-divider.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-divider",
+          "declaration": {
+            "name": "Divider",
+            "module": "src/components/obc-divider/obc-divider.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-icon/obc-icon.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ObcIcon",
+          "members": [
+            {
+              "kind": "field",
+              "name": "iconId",
+              "type": {
+                "text": "string"
+              },
+              "description": "The icon name"
+            },
+            {
+              "kind": "field",
+              "name": "sizePx",
+              "type": {
+                "text": "number"
+              },
+              "default": "24",
+              "description": "The icon size in pixels"
+            },
+            {
+              "kind": "field",
+              "name": "useCssColor",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon-id",
+              "fieldName": "iconId",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "size-px",
+              "fieldName": "sizePx",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "name": "use-css-color",
+              "fieldName": "useCssColor",
+              "type": {
+                "text": "boolean"
+              }
+            }
+          ],
+          "tagName": "obc-icon",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ObcIcon",
+          "declaration": {
+            "name": "ObcIcon",
+            "module": "src/components/obc-icon/obc-icon.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-icon",
+          "declaration": {
+            "name": "ObcIcon",
+            "module": "src/components/obc-icon/obc-icon.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-icon-button/obc-icon-button.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "IconButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "default": "'01-placeholder'"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"normal\""
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"regular\""
+            },
+            {
+              "kind": "field",
+              "name": "cornerLeft",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "cornerRight",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "activeColor",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon",
+              "fieldName": "icon"
+            },
+            {
+              "name": "variant",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "fieldName": "size"
+            },
+            {
+              "name": "corner-left",
+              "fieldName": "cornerLeft"
+            },
+            {
+              "name": "corner-right",
+              "fieldName": "cornerRight"
+            },
+            {
+              "name": "active-color",
+              "fieldName": "activeColor"
+            }
+          ],
+          "tagName": "obc-icon-button",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "IconButton",
+          "declaration": {
+            "name": "IconButton",
+            "module": "src/components/obc-icon-button/obc-icon-button.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-icon-button",
+          "declaration": {
+            "name": "IconButton",
+            "module": "src/components/obc-icon-button/obc-icon-button.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-input/obc-input.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Input",
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"text\""
+            },
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "String"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "method",
+              "name": "onInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "onChange",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "fieldName": "value",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "placeholder",
+              "fieldName": "placeholder",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "type",
+              "fieldName": "type",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "icon",
+              "fieldName": "icon",
+              "type": {
+                "text": "String"
+              }
+            }
+          ],
+          "tagName": "obc-input",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Input",
+          "declaration": {
+            "name": "Input",
+            "module": "src/components/obc-input/obc-input.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-input",
+          "declaration": {
+            "name": "Input",
+            "module": "src/components/obc-input/obc-input.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-notification-button/obc-notification-button.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NotificationButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "openRight",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "openLeft",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "indent",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open-right",
+              "fieldName": "openRight"
+            },
+            {
+              "name": "open-left",
+              "fieldName": "openLeft"
+            },
+            {
+              "name": "icon",
+              "fieldName": "icon"
+            },
+            {
+              "name": "disabled",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indent",
+              "fieldName": "indent"
+            }
+          ],
+          "tagName": "obc-notification-button",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NotificationButton",
+          "declaration": {
+            "name": "NotificationButton",
+            "module": "src/components/obc-notification-button/obc-notification-button.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-notification-button",
+          "declaration": {
+            "name": "NotificationButton",
+            "module": "src/components/obc-notification-button/obc-notification-button.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-navigation-item/obc-navigation-item.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NavigationItem",
+          "members": [
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "default": "'01-placeholder'"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Label'"
+            },
+            {
+              "kind": "field",
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "default": "'#'"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "onClick"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon",
+              "fieldName": "icon"
+            },
+            {
+              "name": "label",
+              "fieldName": "label"
+            },
+            {
+              "name": "href",
+              "fieldName": "href"
+            },
+            {
+              "name": "checked",
+              "fieldName": "checked"
+            }
+          ],
+          "tagName": "obc-navigation-item",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NavigationItem",
+          "declaration": {
+            "name": "NavigationItem",
+            "module": "src/components/obc-navigation-item/obc-navigation-item.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-navigation-item",
+          "declaration": {
+            "name": "NavigationItem",
+            "module": "src/components/obc-navigation-item/obc-navigation-item.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-navigation-menu/obc-navigation-menu.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NavigationMenu",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "tagName": "obc-navigation-menu",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NavigationMenu",
+          "declaration": {
+            "name": "NavigationMenu",
+            "module": "src/components/obc-navigation-menu/obc-navigation-menu.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-navigation-menu",
+          "declaration": {
+            "name": "NavigationMenu",
+            "module": "src/components/obc-navigation-menu/obc-navigation-menu.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-notification-message/obc-notification-message.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NotificationMessage",
+          "members": [
+            {
+              "kind": "field",
+              "name": "empty",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "large",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "empty",
+              "fieldName": "empty"
+            },
+            {
+              "name": "large",
+              "fieldName": "large"
+            }
+          ],
+          "tagName": "obc-notification-message",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NotificationMessage",
+          "declaration": {
+            "name": "NotificationMessage",
+            "module": "src/components/obc-notification-message/obc-notification-message.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-notification-message",
+          "declaration": {
+            "name": "NotificationMessage",
+            "module": "src/components/obc-notification-message/obc-notification-message.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-notification-message-item/obc-notification-message-item.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NotificationMessageItem",
+          "members": [
+            {
+              "kind": "field",
+              "name": "time",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"2021-01-01T11:11:11.111Z\""
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "time",
+              "fieldName": "time"
+            }
+          ],
+          "tagName": "obc-notification-message-item",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NotificationMessageItem",
+          "declaration": {
+            "name": "NotificationMessageItem",
+            "module": "src/components/obc-notification-message-item/obc-notification-message-item.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-notification-message-item",
+          "declaration": {
+            "name": "NotificationMessageItem",
+            "module": "src/components/obc-notification-message-item/obc-notification-message-item.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-slider/obc-slider.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Slider",
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "50"
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "100"
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "number"
+              },
+              "default": "1"
+            },
+            {
+              "kind": "field",
+              "name": "iconLeft",
+              "type": {
+                "text": "string"
+              },
+              "default": "'01-placeholder'"
+            },
+            {
+              "kind": "field",
+              "name": "iconRight",
+              "type": {
+                "text": "string"
+              },
+              "default": "'01-placeholder'"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "fieldName": "value"
+            },
+            {
+              "name": "min",
+              "fieldName": "min"
+            },
+            {
+              "name": "max",
+              "fieldName": "max"
+            },
+            {
+              "name": "step",
+              "fieldName": "step"
+            },
+            {
+              "name": "icon-left",
+              "fieldName": "iconLeft"
+            },
+            {
+              "name": "icon-right",
+              "fieldName": "iconRight"
+            }
+          ],
+          "tagName": "obc-slider",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Slider",
+          "declaration": {
+            "name": "Slider",
+            "module": "src/components/obc-slider/obc-slider.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-slider",
+          "declaration": {
+            "name": "Slider",
+            "module": "src/components/obc-slider/obc-slider.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-toggle-switch/obc-toggle-switch.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ToggleSwitch",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Label'"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "method",
+              "name": "_tryChange"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "fieldName": "label"
+            },
+            {
+              "name": "checked",
+              "fieldName": "checked"
+            }
+          ],
+          "tagName": "obc-toggle-switch",
+          "events": [],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ToggleSwitch",
+          "declaration": {
+            "name": "ToggleSwitch",
+            "module": "src/components/obc-toggle-switch/obc-toggle-switch.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-toggle-switch",
+          "declaration": {
+            "name": "ToggleSwitch",
+            "module": "src/components/obc-toggle-switch/obc-toggle-switch.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-toggle-button-group/obc-toggle-button-group.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ToggleButtonGroup",
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasLabels",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "hostElement",
+              "type": {
+                "text": "HTMLStencilElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "options",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "handleOptionClick",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "has-labels",
+              "fieldName": "hasLabels"
+            },
+            {
+              "name": "value",
+              "fieldName": "value"
+            }
+          ],
+          "tagName": "obc-toggle-button-group",
+          "events": [
+            {
+              "name": "valueChanged",
+              "type": {
+                "text": "EventEmitter<{ value: string }>"
+              }
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ToggleButtonGroup",
+          "declaration": {
+            "name": "ToggleButtonGroup",
+            "module": "src/components/obc-toggle-button-group/obc-toggle-button-group.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-toggle-button-group",
+          "declaration": {
+            "name": "ToggleButtonGroup",
+            "module": "src/components/obc-toggle-button-group/obc-toggle-button-group.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/obc-toggle-button-option/obc-toggle-button-option.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ToggleButtonOption",
+          "members": [
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "default": "'01-placeholder'"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "'value'"
+            },
+            {
+              "kind": "method",
+              "name": "onClick"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon",
+              "fieldName": "icon"
+            },
+            {
+              "name": "value",
+              "fieldName": "value"
+            },
+            {
+              "name": "selected",
+              "fieldName": "selected"
+            }
+          ],
+          "tagName": "obc-toggle-button-option",
+          "events": [
+            {
+              "name": "selected",
+              "type": {
+                "text": "EventEmitter<{ value: string }>"
+              }
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ToggleButtonOption",
+          "declaration": {
+            "name": "ToggleButtonOption",
+            "module": "src/components/obc-toggle-button-option/obc-toggle-button-option.tsx"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "obc-toggle-button-option",
+          "declaration": {
+            "name": "ToggleButtonOption",
+            "module": "src/components/obc-toggle-button-option/obc-toggle-button-option.tsx"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/obc-tooltip/obc-tooltip.tsx",
       "declarations": [
         {
@@ -215,29 +1863,108 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/obc-icon/obc-icon.tsx",
+      "path": "src/components/obc-top-bar/obc-top-bar.tsx",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "ObcIcon",
+          "name": "TopBar",
           "members": [
             {
               "kind": "field",
-              "name": "iconId",
+              "name": "appTitle",
               "type": {
                 "text": "string"
               },
-              "description": "The icon name"
+              "default": "'App'"
             },
             {
               "kind": "field",
-              "name": "sizePx",
+              "name": "pageName",
               "type": {
-                "text": "number"
+                "text": "string"
               },
-              "default": "24",
-              "description": "The icon size in pixels"
+              "default": "'Page'"
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"2021-01-01T11:11:11.111Z\""
+            },
+            {
+              "kind": "field",
+              "name": "wideMenuButton",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "showAppsButton",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "showDimmingButton",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "showAlertsButton",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "showClock",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "inactive",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "sizeSmall",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "settings",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "breadcrumbItems",
+              "type": {
+                "text": "BreadcrumbItem[]"
+              },
+              "default": "[]"
             },
             {
               "kind": "method",
@@ -246,40 +1973,126 @@
           ],
           "attributes": [
             {
-              "name": "icon-id",
-              "fieldName": "iconId",
-              "type": {
-                "text": "string"
-              }
+              "name": "app-title",
+              "fieldName": "appTitle"
             },
             {
-              "name": "size-px",
-              "fieldName": "sizePx",
+              "name": "page-name",
+              "fieldName": "pageName"
+            },
+            {
+              "name": "date",
+              "fieldName": "date"
+            },
+            {
+              "name": "wide-menu-button",
+              "fieldName": "wideMenuButton"
+            },
+            {
+              "name": "show-apps-button",
+              "fieldName": "showAppsButton"
+            },
+            {
+              "name": "show-dimming-button",
+              "fieldName": "showDimmingButton"
+            },
+            {
+              "name": "show-alerts-button",
+              "fieldName": "showAlertsButton"
+            },
+            {
+              "name": "show-clock",
+              "fieldName": "showClock"
+            },
+            {
+              "name": "inactive",
+              "fieldName": "inactive"
+            },
+            {
+              "name": "size-small",
+              "fieldName": "sizeSmall"
+            },
+            {
+              "name": "settings",
+              "fieldName": "settings"
+            },
+            {
+              "name": "breadcrumb-items",
+              "fieldName": "breadcrumbItems",
               "type": {
-                "text": "number"
+                "text": "BreadcrumbItem[]"
               }
             }
           ],
-          "tagName": "obc-icon",
-          "events": [],
+          "tagName": "obc-top-bar",
+          "events": [
+            {
+              "name": "menuButtonClicked",
+              "type": {
+                "text": "EventEmitter"
+              }
+            },
+            {
+              "name": "alertsButtonClicked",
+              "type": {
+                "text": "EventEmitter"
+              }
+            },
+            {
+              "name": "dimmingButtonClicked",
+              "type": {
+                "text": "EventEmitter"
+              }
+            },
+            {
+              "name": "appsButtonClicked",
+              "type": {
+                "text": "EventEmitter"
+              }
+            },
+            {
+              "name": "leftMoreButtonClicked",
+              "type": {
+                "text": "EventEmitter"
+              }
+            },
+            {
+              "name": "close",
+              "type": {
+                "text": "EventEmitter"
+              }
+            },
+            {
+              "name": "back",
+              "type": {
+                "text": "EventEmitter"
+              }
+            },
+            {
+              "name": "forward",
+              "type": {
+                "text": "EventEmitter"
+              }
+            }
+          ],
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "ObcIcon",
+          "name": "TopBar",
           "declaration": {
-            "name": "ObcIcon",
-            "module": "src/components/obc-icon/obc-icon.tsx"
+            "name": "TopBar",
+            "module": "src/components/obc-top-bar/obc-top-bar.tsx"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "obc-icon",
+          "name": "obc-top-bar",
           "declaration": {
-            "name": "ObcIcon",
-            "module": "src/components/obc-icon/obc-icon.tsx"
+            "name": "TopBar",
+            "module": "src/components/obc-top-bar/obc-top-bar.tsx"
           }
         }
       ]

@@ -1,0 +1,125 @@
+.wrapper {
+    box-sizing: border-box;
+    padding: 0;
+    background: transparent;
+    height: 48px;
+    width: 48px;
+    appearance: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @mixin font-button;
+
+    &.counter {
+        width: 56px;
+    }
+
+    & .badge {
+        color: var(--on-normal-active-color, #1A1A1A);
+    }
+
+    & .visible-wrapper {
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        width: 100%;
+        gap: 4px;
+    }
+
+    &.standalone:not(.counter) .visible-wrapper {
+        width: 32px;
+    }
+
+    &:not(.standalone) {
+        & .visible-wrapper {
+            border-radius: 0 6px 6px 0;
+        }
+    }
+
+    &.type-alarm {
+        @mixin style style=alarm visibleWrapperClass=.visible-wrapper;
+
+        & .visible-wrapper {
+            color: var(--on-alarm-active-color, #FFF);
+
+            & .badge {
+                color: var(--on-alarm-active-color, #FFF);
+            }
+        }
+    }
+
+    &.type-warning {
+        @mixin style style=warning visibleWrapperClass=.visible-wrapper;
+
+        & .visible-wrapper {
+            color: var(--on-warning-active-color, #FFF);
+
+            & .badge {
+                color: var(--on-warning-active-color, #FFF);
+            }
+        }
+    }
+
+    &.type-caution {
+        @mixin style style=caution visibleWrapperClass=.visible-wrapper;
+
+        & .visible-wrapper {
+            color: var(--on-caution-active-color, #FFF);
+
+            & .badge {
+                color: var(--on-caution-active-color, #FFF);
+            }
+        }
+    }
+
+    &.type-running {
+        @mixin style style=normal visibleWrapperClass=.visible-wrapper;
+
+        & .icon {
+            color: var(--alert-running-color);
+        }
+    }
+
+    &.type-command {
+        @mixin style style=notification visibleWrapperClass=.visible-wrapper;
+
+        & .visible-wrapper {
+            color: var(--on-running-active-color, #FFF);
+
+            & .badge {
+                color: var(--on-running-active-color, #FFF);
+            }
+        }
+    }
+
+    &.type-notification {
+        @mixin style style=normal visibleWrapperClass=.visible-wrapper;
+
+        & .icon {
+            color: var(--instrument-enhanced-secondary-color);
+        }
+    }
+
+    &.type-regular {
+        @mixin style style=normal visibleWrapperClass=.visible-wrapper;
+        color: var(--on-normal-active-color);
+
+        & .icon {
+            color: var(--on-normal-neutral-color);
+        }
+    }
+
+    &.type-flat {
+        @mixin style style=flat visibleWrapperClass=.visible-wrapper;
+        color: var(--on-flat-active-color);
+
+        & .icon {
+            color: var(--on-flat-neutral-color);
+        }
+    }
+}

@@ -5,7 +5,42 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AlertType } from "./components/obc-alert-button/obc-alert-button";
+import { Alert } from "./components/obc-alert-menu/obc-alert-menu";
+import { MenuItem } from "./components/obc-app-menu/obc-app-menu";
+import { BreadcrumbItem } from "./components/obc-breadcrumb/obc-breadcrumb";
+import { BreadcrumbItem as BreadcrumbItem1 } from "./components/obc-breadcrumb/obc-breadcrumb";
+export { AlertType } from "./components/obc-alert-button/obc-alert-button";
+export { Alert } from "./components/obc-alert-menu/obc-alert-menu";
+export { MenuItem } from "./components/obc-app-menu/obc-app-menu";
+export { BreadcrumbItem } from "./components/obc-breadcrumb/obc-breadcrumb";
+export { BreadcrumbItem as BreadcrumbItem1 } from "./components/obc-breadcrumb/obc-breadcrumb";
 export namespace Components {
+    interface ObcAlertButton {
+        "counter": boolean;
+        "nAlerts": number;
+        "standalone": boolean;
+        "type": AlertType;
+    }
+    interface ObcAlertMenu {
+        "alerts": Array<Alert>;
+        "narrow": boolean;
+    }
+    interface ObcAppButton {
+        "checked": boolean;
+        "icon": string;
+        "label": string;
+        "size": string;
+    }
+    interface ObcAppMenu {
+        "items": Array<MenuItem>;
+        "selectedItemId": string;
+    }
+    interface ObcBreadcrumb {
+        "items": BreadcrumbItem[];
+    }
+    interface ObcBrillianceMenu {
+    }
     /**
      * Button component
      */
@@ -14,6 +49,14 @@ export namespace Components {
         "leftAlign": boolean;
         "size": string;
         "variant": string;
+    }
+    interface ObcClock {
+        "date": string;
+        "showDate": boolean;
+    }
+    interface ObcDemo {
+    }
+    interface ObcDivider {
     }
     interface ObcIcon {
         /**
@@ -24,6 +67,64 @@ export namespace Components {
           * The icon size in pixels
          */
         "sizePx": number;
+        "useCssColor": boolean;
+    }
+    interface ObcIconButton {
+        "activeColor": boolean;
+        "cornerLeft": boolean;
+        "cornerRight": boolean;
+        "icon": string;
+        "size": string;
+        "variant": string;
+    }
+    interface ObcInput {
+        "icon": String;
+        "placeholder": string;
+        "type": string;
+        "value": string;
+    }
+    interface ObcNavigationItem {
+        "checked": boolean;
+        "href": string;
+        "icon": string;
+        "label": string;
+    }
+    interface ObcNavigationMenu {
+    }
+    interface ObcNotificationButton {
+        "disabled": boolean;
+        "icon": boolean;
+        "indent": boolean;
+        "openLeft": boolean;
+        "openRight": boolean;
+    }
+    interface ObcNotificationMessage {
+        "empty": boolean;
+        "large": boolean;
+    }
+    interface ObcNotificationMessageItem {
+        "time": string;
+    }
+    interface ObcSlider {
+        "iconLeft": string;
+        "iconRight": string;
+        "max": number;
+        "min": number;
+        "step": number;
+        "value": number;
+    }
+    interface ObcToggleButtonGroup {
+        "hasLabels": boolean;
+        "value": string;
+    }
+    interface ObcToggleButtonOption {
+        "icon": string;
+        "selected": boolean;
+        "value": string;
+    }
+    interface ObcToggleSwitch {
+        "checked": boolean;
+        "label": string;
     }
     interface ObcTooltip {
         "label": string;
@@ -39,8 +140,100 @@ export namespace Components {
         "position": 'above' | 'below' | 'left' | 'right';
         "text": string;
     }
+    interface ObcTopBar {
+        "appTitle": string;
+        "breadcrumbItems": BreadcrumbItem1[];
+        "date": string;
+        "inactive": boolean;
+        "pageName": string;
+        "settings": boolean;
+        "showAlertsButton": boolean;
+        "showAppsButton": boolean;
+        "showClock": boolean;
+        "showDimmingButton": boolean;
+        "sizeSmall": boolean;
+        "wideMenuButton": boolean;
+    }
+}
+export interface ObcAppMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLObcAppMenuElement;
+}
+export interface ObcBrillianceMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLObcBrillianceMenuElement;
+}
+export interface ObcToggleButtonGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLObcToggleButtonGroupElement;
+}
+export interface ObcToggleButtonOptionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLObcToggleButtonOptionElement;
+}
+export interface ObcTopBarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLObcTopBarElement;
 }
 declare global {
+    interface HTMLObcAlertButtonElement extends Components.ObcAlertButton, HTMLStencilElement {
+    }
+    var HTMLObcAlertButtonElement: {
+        prototype: HTMLObcAlertButtonElement;
+        new (): HTMLObcAlertButtonElement;
+    };
+    interface HTMLObcAlertMenuElement extends Components.ObcAlertMenu, HTMLStencilElement {
+    }
+    var HTMLObcAlertMenuElement: {
+        prototype: HTMLObcAlertMenuElement;
+        new (): HTMLObcAlertMenuElement;
+    };
+    interface HTMLObcAppButtonElement extends Components.ObcAppButton, HTMLStencilElement {
+    }
+    var HTMLObcAppButtonElement: {
+        prototype: HTMLObcAppButtonElement;
+        new (): HTMLObcAppButtonElement;
+    };
+    interface HTMLObcAppMenuElementEventMap {
+        "appSelected": MenuItem;
+    }
+    interface HTMLObcAppMenuElement extends Components.ObcAppMenu, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLObcAppMenuElementEventMap>(type: K, listener: (this: HTMLObcAppMenuElement, ev: ObcAppMenuCustomEvent<HTMLObcAppMenuElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLObcAppMenuElementEventMap>(type: K, listener: (this: HTMLObcAppMenuElement, ev: ObcAppMenuCustomEvent<HTMLObcAppMenuElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLObcAppMenuElement: {
+        prototype: HTMLObcAppMenuElement;
+        new (): HTMLObcAppMenuElement;
+    };
+    interface HTMLObcBreadcrumbElement extends Components.ObcBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLObcBreadcrumbElement: {
+        prototype: HTMLObcBreadcrumbElement;
+        new (): HTMLObcBreadcrumbElement;
+    };
+    interface HTMLObcBrillianceMenuElementEventMap {
+        "brillianceChanged": { value: number };
+    }
+    interface HTMLObcBrillianceMenuElement extends Components.ObcBrillianceMenu, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLObcBrillianceMenuElementEventMap>(type: K, listener: (this: HTMLObcBrillianceMenuElement, ev: ObcBrillianceMenuCustomEvent<HTMLObcBrillianceMenuElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLObcBrillianceMenuElementEventMap>(type: K, listener: (this: HTMLObcBrillianceMenuElement, ev: ObcBrillianceMenuCustomEvent<HTMLObcBrillianceMenuElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLObcBrillianceMenuElement: {
+        prototype: HTMLObcBrillianceMenuElement;
+        new (): HTMLObcBrillianceMenuElement;
+    };
     /**
      * Button component
      */
@@ -50,11 +243,117 @@ declare global {
         prototype: HTMLObcButtonElement;
         new (): HTMLObcButtonElement;
     };
+    interface HTMLObcClockElement extends Components.ObcClock, HTMLStencilElement {
+    }
+    var HTMLObcClockElement: {
+        prototype: HTMLObcClockElement;
+        new (): HTMLObcClockElement;
+    };
+    interface HTMLObcDemoElement extends Components.ObcDemo, HTMLStencilElement {
+    }
+    var HTMLObcDemoElement: {
+        prototype: HTMLObcDemoElement;
+        new (): HTMLObcDemoElement;
+    };
+    interface HTMLObcDividerElement extends Components.ObcDivider, HTMLStencilElement {
+    }
+    var HTMLObcDividerElement: {
+        prototype: HTMLObcDividerElement;
+        new (): HTMLObcDividerElement;
+    };
     interface HTMLObcIconElement extends Components.ObcIcon, HTMLStencilElement {
     }
     var HTMLObcIconElement: {
         prototype: HTMLObcIconElement;
         new (): HTMLObcIconElement;
+    };
+    interface HTMLObcIconButtonElement extends Components.ObcIconButton, HTMLStencilElement {
+    }
+    var HTMLObcIconButtonElement: {
+        prototype: HTMLObcIconButtonElement;
+        new (): HTMLObcIconButtonElement;
+    };
+    interface HTMLObcInputElement extends Components.ObcInput, HTMLStencilElement {
+    }
+    var HTMLObcInputElement: {
+        prototype: HTMLObcInputElement;
+        new (): HTMLObcInputElement;
+    };
+    interface HTMLObcNavigationItemElement extends Components.ObcNavigationItem, HTMLStencilElement {
+    }
+    var HTMLObcNavigationItemElement: {
+        prototype: HTMLObcNavigationItemElement;
+        new (): HTMLObcNavigationItemElement;
+    };
+    interface HTMLObcNavigationMenuElement extends Components.ObcNavigationMenu, HTMLStencilElement {
+    }
+    var HTMLObcNavigationMenuElement: {
+        prototype: HTMLObcNavigationMenuElement;
+        new (): HTMLObcNavigationMenuElement;
+    };
+    interface HTMLObcNotificationButtonElement extends Components.ObcNotificationButton, HTMLStencilElement {
+    }
+    var HTMLObcNotificationButtonElement: {
+        prototype: HTMLObcNotificationButtonElement;
+        new (): HTMLObcNotificationButtonElement;
+    };
+    interface HTMLObcNotificationMessageElement extends Components.ObcNotificationMessage, HTMLStencilElement {
+    }
+    var HTMLObcNotificationMessageElement: {
+        prototype: HTMLObcNotificationMessageElement;
+        new (): HTMLObcNotificationMessageElement;
+    };
+    interface HTMLObcNotificationMessageItemElement extends Components.ObcNotificationMessageItem, HTMLStencilElement {
+    }
+    var HTMLObcNotificationMessageItemElement: {
+        prototype: HTMLObcNotificationMessageItemElement;
+        new (): HTMLObcNotificationMessageItemElement;
+    };
+    interface HTMLObcSliderElement extends Components.ObcSlider, HTMLStencilElement {
+    }
+    var HTMLObcSliderElement: {
+        prototype: HTMLObcSliderElement;
+        new (): HTMLObcSliderElement;
+    };
+    interface HTMLObcToggleButtonGroupElementEventMap {
+        "valueChanged": { value: string };
+    }
+    interface HTMLObcToggleButtonGroupElement extends Components.ObcToggleButtonGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLObcToggleButtonGroupElementEventMap>(type: K, listener: (this: HTMLObcToggleButtonGroupElement, ev: ObcToggleButtonGroupCustomEvent<HTMLObcToggleButtonGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLObcToggleButtonGroupElementEventMap>(type: K, listener: (this: HTMLObcToggleButtonGroupElement, ev: ObcToggleButtonGroupCustomEvent<HTMLObcToggleButtonGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLObcToggleButtonGroupElement: {
+        prototype: HTMLObcToggleButtonGroupElement;
+        new (): HTMLObcToggleButtonGroupElement;
+    };
+    interface HTMLObcToggleButtonOptionElementEventMap {
+        "selected": { value: string };
+    }
+    interface HTMLObcToggleButtonOptionElement extends Components.ObcToggleButtonOption, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLObcToggleButtonOptionElementEventMap>(type: K, listener: (this: HTMLObcToggleButtonOptionElement, ev: ObcToggleButtonOptionCustomEvent<HTMLObcToggleButtonOptionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLObcToggleButtonOptionElementEventMap>(type: K, listener: (this: HTMLObcToggleButtonOptionElement, ev: ObcToggleButtonOptionCustomEvent<HTMLObcToggleButtonOptionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLObcToggleButtonOptionElement: {
+        prototype: HTMLObcToggleButtonOptionElement;
+        new (): HTMLObcToggleButtonOptionElement;
+    };
+    interface HTMLObcToggleSwitchElement extends Components.ObcToggleSwitch, HTMLStencilElement {
+    }
+    var HTMLObcToggleSwitchElement: {
+        prototype: HTMLObcToggleSwitchElement;
+        new (): HTMLObcToggleSwitchElement;
     };
     interface HTMLObcTooltipElement extends Components.ObcTooltip, HTMLStencilElement {
     }
@@ -62,13 +361,85 @@ declare global {
         prototype: HTMLObcTooltipElement;
         new (): HTMLObcTooltipElement;
     };
+    interface HTMLObcTopBarElementEventMap {
+        "menuButtonClicked": any;
+        "alertsButtonClicked": any;
+        "dimmingButtonClicked": any;
+        "appsButtonClicked": any;
+        "leftMoreButtonClicked": any;
+        "close": any;
+        "back": any;
+        "forward": any;
+    }
+    interface HTMLObcTopBarElement extends Components.ObcTopBar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLObcTopBarElementEventMap>(type: K, listener: (this: HTMLObcTopBarElement, ev: ObcTopBarCustomEvent<HTMLObcTopBarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLObcTopBarElementEventMap>(type: K, listener: (this: HTMLObcTopBarElement, ev: ObcTopBarCustomEvent<HTMLObcTopBarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLObcTopBarElement: {
+        prototype: HTMLObcTopBarElement;
+        new (): HTMLObcTopBarElement;
+    };
     interface HTMLElementTagNameMap {
+        "obc-alert-button": HTMLObcAlertButtonElement;
+        "obc-alert-menu": HTMLObcAlertMenuElement;
+        "obc-app-button": HTMLObcAppButtonElement;
+        "obc-app-menu": HTMLObcAppMenuElement;
+        "obc-breadcrumb": HTMLObcBreadcrumbElement;
+        "obc-brilliance-menu": HTMLObcBrillianceMenuElement;
         "obc-button": HTMLObcButtonElement;
+        "obc-clock": HTMLObcClockElement;
+        "obc-demo": HTMLObcDemoElement;
+        "obc-divider": HTMLObcDividerElement;
         "obc-icon": HTMLObcIconElement;
+        "obc-icon-button": HTMLObcIconButtonElement;
+        "obc-input": HTMLObcInputElement;
+        "obc-navigation-item": HTMLObcNavigationItemElement;
+        "obc-navigation-menu": HTMLObcNavigationMenuElement;
+        "obc-notification-button": HTMLObcNotificationButtonElement;
+        "obc-notification-message": HTMLObcNotificationMessageElement;
+        "obc-notification-message-item": HTMLObcNotificationMessageItemElement;
+        "obc-slider": HTMLObcSliderElement;
+        "obc-toggle-button-group": HTMLObcToggleButtonGroupElement;
+        "obc-toggle-button-option": HTMLObcToggleButtonOptionElement;
+        "obc-toggle-switch": HTMLObcToggleSwitchElement;
         "obc-tooltip": HTMLObcTooltipElement;
+        "obc-top-bar": HTMLObcTopBarElement;
     }
 }
 declare namespace LocalJSX {
+    interface ObcAlertButton {
+        "counter"?: boolean;
+        "nAlerts"?: number;
+        "standalone"?: boolean;
+        "type"?: AlertType;
+    }
+    interface ObcAlertMenu {
+        "alerts"?: Array<Alert>;
+        "narrow"?: boolean;
+    }
+    interface ObcAppButton {
+        "checked"?: boolean;
+        "icon"?: string;
+        "label"?: string;
+        "size"?: string;
+    }
+    interface ObcAppMenu {
+        "items"?: Array<MenuItem>;
+        "onAppSelected"?: (event: ObcAppMenuCustomEvent<MenuItem>) => void;
+        "selectedItemId"?: string;
+    }
+    interface ObcBreadcrumb {
+        "items"?: BreadcrumbItem[];
+    }
+    interface ObcBrillianceMenu {
+        "onBrillianceChanged"?: (event: ObcBrillianceMenuCustomEvent<{ value: number }>) => void;
+    }
     /**
      * Button component
      */
@@ -77,6 +448,14 @@ declare namespace LocalJSX {
         "leftAlign"?: boolean;
         "size"?: string;
         "variant"?: string;
+    }
+    interface ObcClock {
+        "date"?: string;
+        "showDate"?: boolean;
+    }
+    interface ObcDemo {
+    }
+    interface ObcDivider {
     }
     interface ObcIcon {
         /**
@@ -87,6 +466,66 @@ declare namespace LocalJSX {
           * The icon size in pixels
          */
         "sizePx"?: number;
+        "useCssColor"?: boolean;
+    }
+    interface ObcIconButton {
+        "activeColor"?: boolean;
+        "cornerLeft"?: boolean;
+        "cornerRight"?: boolean;
+        "icon"?: string;
+        "size"?: string;
+        "variant"?: string;
+    }
+    interface ObcInput {
+        "icon"?: String;
+        "placeholder"?: string;
+        "type"?: string;
+        "value"?: string;
+    }
+    interface ObcNavigationItem {
+        "checked"?: boolean;
+        "href"?: string;
+        "icon"?: string;
+        "label"?: string;
+    }
+    interface ObcNavigationMenu {
+    }
+    interface ObcNotificationButton {
+        "disabled"?: boolean;
+        "icon"?: boolean;
+        "indent"?: boolean;
+        "openLeft"?: boolean;
+        "openRight"?: boolean;
+    }
+    interface ObcNotificationMessage {
+        "empty"?: boolean;
+        "large"?: boolean;
+    }
+    interface ObcNotificationMessageItem {
+        "time"?: string;
+    }
+    interface ObcSlider {
+        "iconLeft"?: string;
+        "iconRight"?: string;
+        "max"?: number;
+        "min"?: number;
+        "step"?: number;
+        "value"?: number;
+    }
+    interface ObcToggleButtonGroup {
+        "hasLabels"?: boolean;
+        "onValueChanged"?: (event: ObcToggleButtonGroupCustomEvent<{ value: string }>) => void;
+        "value"?: string;
+    }
+    interface ObcToggleButtonOption {
+        "icon"?: string;
+        "onSelected"?: (event: ObcToggleButtonOptionCustomEvent<{ value: string }>) => void;
+        "selected"?: boolean;
+        "value"?: string;
+    }
+    interface ObcToggleSwitch {
+        "checked"?: boolean;
+        "label"?: string;
     }
     interface ObcTooltip {
         "label"?: string;
@@ -102,22 +541,86 @@ declare namespace LocalJSX {
         "position"?: 'above' | 'below' | 'left' | 'right';
         "text"?: string;
     }
+    interface ObcTopBar {
+        "appTitle"?: string;
+        "breadcrumbItems"?: BreadcrumbItem1[];
+        "date"?: string;
+        "inactive"?: boolean;
+        "onAlertsButtonClicked"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "onAppsButtonClicked"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "onBack"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "onClose"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "onDimmingButtonClicked"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "onForward"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "onLeftMoreButtonClicked"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "onMenuButtonClicked"?: (event: ObcTopBarCustomEvent<any>) => void;
+        "pageName"?: string;
+        "settings"?: boolean;
+        "showAlertsButton"?: boolean;
+        "showAppsButton"?: boolean;
+        "showClock"?: boolean;
+        "showDimmingButton"?: boolean;
+        "sizeSmall"?: boolean;
+        "wideMenuButton"?: boolean;
+    }
     interface IntrinsicElements {
+        "obc-alert-button": ObcAlertButton;
+        "obc-alert-menu": ObcAlertMenu;
+        "obc-app-button": ObcAppButton;
+        "obc-app-menu": ObcAppMenu;
+        "obc-breadcrumb": ObcBreadcrumb;
+        "obc-brilliance-menu": ObcBrillianceMenu;
         "obc-button": ObcButton;
+        "obc-clock": ObcClock;
+        "obc-demo": ObcDemo;
+        "obc-divider": ObcDivider;
         "obc-icon": ObcIcon;
+        "obc-icon-button": ObcIconButton;
+        "obc-input": ObcInput;
+        "obc-navigation-item": ObcNavigationItem;
+        "obc-navigation-menu": ObcNavigationMenu;
+        "obc-notification-button": ObcNotificationButton;
+        "obc-notification-message": ObcNotificationMessage;
+        "obc-notification-message-item": ObcNotificationMessageItem;
+        "obc-slider": ObcSlider;
+        "obc-toggle-button-group": ObcToggleButtonGroup;
+        "obc-toggle-button-option": ObcToggleButtonOption;
+        "obc-toggle-switch": ObcToggleSwitch;
         "obc-tooltip": ObcTooltip;
+        "obc-top-bar": ObcTopBar;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "obc-alert-button": LocalJSX.ObcAlertButton & JSXBase.HTMLAttributes<HTMLObcAlertButtonElement>;
+            "obc-alert-menu": LocalJSX.ObcAlertMenu & JSXBase.HTMLAttributes<HTMLObcAlertMenuElement>;
+            "obc-app-button": LocalJSX.ObcAppButton & JSXBase.HTMLAttributes<HTMLObcAppButtonElement>;
+            "obc-app-menu": LocalJSX.ObcAppMenu & JSXBase.HTMLAttributes<HTMLObcAppMenuElement>;
+            "obc-breadcrumb": LocalJSX.ObcBreadcrumb & JSXBase.HTMLAttributes<HTMLObcBreadcrumbElement>;
+            "obc-brilliance-menu": LocalJSX.ObcBrillianceMenu & JSXBase.HTMLAttributes<HTMLObcBrillianceMenuElement>;
             /**
              * Button component
              */
             "obc-button": LocalJSX.ObcButton & JSXBase.HTMLAttributes<HTMLObcButtonElement>;
+            "obc-clock": LocalJSX.ObcClock & JSXBase.HTMLAttributes<HTMLObcClockElement>;
+            "obc-demo": LocalJSX.ObcDemo & JSXBase.HTMLAttributes<HTMLObcDemoElement>;
+            "obc-divider": LocalJSX.ObcDivider & JSXBase.HTMLAttributes<HTMLObcDividerElement>;
             "obc-icon": LocalJSX.ObcIcon & JSXBase.HTMLAttributes<HTMLObcIconElement>;
+            "obc-icon-button": LocalJSX.ObcIconButton & JSXBase.HTMLAttributes<HTMLObcIconButtonElement>;
+            "obc-input": LocalJSX.ObcInput & JSXBase.HTMLAttributes<HTMLObcInputElement>;
+            "obc-navigation-item": LocalJSX.ObcNavigationItem & JSXBase.HTMLAttributes<HTMLObcNavigationItemElement>;
+            "obc-navigation-menu": LocalJSX.ObcNavigationMenu & JSXBase.HTMLAttributes<HTMLObcNavigationMenuElement>;
+            "obc-notification-button": LocalJSX.ObcNotificationButton & JSXBase.HTMLAttributes<HTMLObcNotificationButtonElement>;
+            "obc-notification-message": LocalJSX.ObcNotificationMessage & JSXBase.HTMLAttributes<HTMLObcNotificationMessageElement>;
+            "obc-notification-message-item": LocalJSX.ObcNotificationMessageItem & JSXBase.HTMLAttributes<HTMLObcNotificationMessageItemElement>;
+            "obc-slider": LocalJSX.ObcSlider & JSXBase.HTMLAttributes<HTMLObcSliderElement>;
+            "obc-toggle-button-group": LocalJSX.ObcToggleButtonGroup & JSXBase.HTMLAttributes<HTMLObcToggleButtonGroupElement>;
+            "obc-toggle-button-option": LocalJSX.ObcToggleButtonOption & JSXBase.HTMLAttributes<HTMLObcToggleButtonOptionElement>;
+            "obc-toggle-switch": LocalJSX.ObcToggleSwitch & JSXBase.HTMLAttributes<HTMLObcToggleSwitchElement>;
             "obc-tooltip": LocalJSX.ObcTooltip & JSXBase.HTMLAttributes<HTMLObcTooltipElement>;
+            "obc-top-bar": LocalJSX.ObcTopBar & JSXBase.HTMLAttributes<HTMLObcTopBarElement>;
         }
     }
 }

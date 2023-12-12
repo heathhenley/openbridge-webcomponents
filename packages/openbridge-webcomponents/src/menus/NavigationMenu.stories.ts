@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { NavigationMenu } from './NavigationMenu';
-import './NavigationMenu';
-import './NavigationItem'
 import { html } from 'lit';
 
 const meta: Meta<typeof NavigationMenu> = {
   title: 'menu/Navigation menu',
   tags: ['autodocs'],
-  component: "ob-navigation-menu",
+  component: "obc-navigation-menu",
   render: (args) => {
     return html`
     <div style="height: 80vh">

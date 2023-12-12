@@ -113,12 +113,15 @@ export async function main() {
 
     const scriptImports: string[] = [];
     const scriptMapping: string[] = [];
+    const scriptMappingCss: string[] = [];
     for (const icon of icons) {
         const imageData = fs.readFileSync(`./script/.cache/icons/${icon.name}.svg`, 'utf8');
         writeSingleColorIcon(imageData, icon);
         writeCssColorIcon(imageData, icon);
         scriptImports.push(`import ${icon.javascriptName} from "./assets/icons/${icon.name}.svg"`);
+        scriptImports.push(`import ${icon.javascriptName}Css from "./assets/icons-css/${icon.name}.svg"`);
         scriptMapping.push(`    '${icon.name}': ${icon.javascriptName}`);
+        scriptMappingCss.push(`    '${icon.name}': ${icon.javascriptName}Css`);
     }
 
 
@@ -127,6 +130,9 @@ export async function main() {
     const script = `${scriptImports.sort().join('\n')}
 export const ICONS: {[key: string]: string} = {
 ${scriptMapping.sort().join(',\n')}
+};
+export const ICONS_CSS: {[key: string]: string} = {
+${scriptMappingCss.sort().join(',\n')}
 };
 
 export const ICONS_IDS: string[] = Object.keys(ICONS);

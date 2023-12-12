@@ -5,7 +5,7 @@ import './Breadcrumb';
 const meta: Meta<typeof Breadcrumb> = {
   title: 'Menu/Breadcrumb',
   tags: ['autodocs'],
-  component: "ob-breadcrumb",
+  component: "obc-breadcrumb",
   args: {
     items: [{ label: "Page 1"}, { label: "Page 1.2"}, { label: "Page 1.2.3"}]
   },

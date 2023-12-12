@@ -19,6 +19,19 @@ Button component
 | `variant`   | `variant`    |             | `string`  | `"normal"`  |
 
 
+## Dependencies
+
+### Used by
+
+ - [obc-alert-menu](../obc-alert-menu)
+
+### Graph
+```mermaid
+graph TD;
+  obc-alert-menu --> obc-button
+  style obc-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

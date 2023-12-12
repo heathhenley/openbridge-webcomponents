@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "download:icons": "tsx ./script/download-icons.ts",
     "test-storybook": "test-storybook",
-    "prepack": "yarn build"
+    "prepack": "yarn build",
+    "convert:stencil": "tsx ./script/lit2stencil.ts"
   },
   "dependencies": {
     "lit": "^2.7.6"

@@ -7,7 +7,7 @@ import '../icon/Icon';
 const meta: Meta<typeof NotificationMessage> = {
   title: 'Application/Notification message',
   tags: ['autodocs'],
-  component: "ob-notification-message",
+  component: "obc-notification-message",
   args: {
   },
   argTypes: {

@@ -7,7 +7,7 @@ import "../icon/Icon";
 const meta: Meta<typeof Tooltip> = {
   title: 'Alerts & Notifications/Tooltip',
   tags: ['autodocs'],
-  component: "ob-tooltip",
+  component: "obc-tooltip",
   args: {
     variant: TooltipVariant.neutral,
     title: 'Title',
