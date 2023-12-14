@@ -26,6 +26,11 @@ export class TopBar {
   @Event() back: EventEmitter;
   @Event() forward: EventEmitter;
 
+  private onMenuButtonClicked = () => {
+    console.log('menu button clicked');
+    this.menuButtonClicked.emit();
+  }
+
   render() {
     let leftGroup = [];
     if (this.settings) {
@@ -40,7 +45,7 @@ export class TopBar {
       if (!this.inactive) {
         leftGroup.push(
           <div class={{'menu-button': true, wide: this.wideMenuButton}}>
-                  <obc-icon-button icon="01-menu" variant="flat" onClick={this.menuButtonClicked.emit}></obc-icon-button>
+                  <obc-icon-button icon="01-menu" variant="flat" onClick={this.onMenuButtonClicked}></obc-icon-button>
                 </div>);
       }
       if (!this.sizeSmall) {

@@ -6,7 +6,7 @@ export class Demo {
     @State() showBrilliance = false;
     @State() showNavigation = false;
 
-     menuButtonClicked() {
+    private menuButtonClicked = () => {
         this.showNavigation = !this.showNavigation;
       }
 

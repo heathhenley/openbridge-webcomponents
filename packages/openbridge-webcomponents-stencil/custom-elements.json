@@ -579,8 +579,9 @@
               "default": "false"
             },
             {
-              "kind": "method",
-              "name": "menuButtonClicked"
+              "kind": "field",
+              "name": "menuButtonClicked",
+              "privacy": "private"
             },
             {
               "kind": "method",
@@ -1965,6 +1966,11 @@
                 "text": "BreadcrumbItem[]"
               },
               "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "onMenuButtonClicked",
+              "privacy": "private"
             },
             {
               "kind": "method",

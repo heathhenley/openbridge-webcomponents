@@ -9,8 +9,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-
-// @ts-expect-error TS2345
 app.use(ComponentLibrary)
 
 app.mount('#app')
